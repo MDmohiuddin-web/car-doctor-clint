@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.photo{
+   
+    top: 50px;
+    width: 50%;
+    /* height: 70%; */
+}
