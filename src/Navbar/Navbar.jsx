@@ -67,7 +67,7 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        <div className={`navbar-end  gap-5`}>
+        <div className={`navbar-end  gap-3`}>
           <img src={frame} alt=""  className="cursor-pointer" />
           <img src={frame1} alt="" className="cursor-pointer" />
           

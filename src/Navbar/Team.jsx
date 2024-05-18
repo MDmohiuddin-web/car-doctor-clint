@@ -5,8 +5,8 @@ import social from '../assets/midia.svg'
 
 const Team = () => {
   return (
-    <div className="flex flex-wrap gap-5">
-      <div className="card card-compact w-[300px] bg-base-100 shadow-md rounded-md border p-2">
+    <div className="flex flex-wrap gap-5 justify-center">
+      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
         <figure>
           <img
             src={member1}
@@ -20,7 +20,7 @@ const Team = () => {
           <img src={social} alt="" className='h-[30%] pl-[20%]'/>
         </div>
       </div>
-      <div className="card card-compact w-[300px] bg-base-100 shadow-md rounded-md border p-2">
+      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
         <figure>
           <img
             src={member2}
@@ -34,7 +34,7 @@ const Team = () => {
           <img src={social} alt="" className='h-[30%] pl-[20%]'/>
         </div>
       </div>
-      <div className="card card-compact w-[300px] bg-base-100 shadow-md rounded-md border p-2">
+      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
         <figure>
           <img
             src={member3}

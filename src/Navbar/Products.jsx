@@ -10,8 +10,8 @@ import star from "../assets/star.svg";
 
 const Products = () => {
   return (
-    <div className="my-5 flex flex-wrap capitalize gap-5">
-      <div className="card card-compact w-[300px] bg-base-100 shadow-md rounded-md border p-2">
+    <div className="my-5 flex flex-wrap capitalize gap-5 justify-center ">
+      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
         <figure>
           <img
             src={Engine}
@@ -26,7 +26,7 @@ const Products = () => {
         </div>
       </div>
       {/* 1 */}
-      <div className="card card-compact w-[300px] bg-base-100 shadow-md rounded-md border p-2">
+      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
         <figure>
           <img
             src={are}
@@ -41,7 +41,7 @@ const Products = () => {
         </div>
       </div>
       {/* 2 */}
-      <div className="card card-compact w-[300px] bg-base-100 shadow-md rounded-md border p-2">
+      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
         <figure>
           <img
             src={EnginePlugs}
@@ -56,7 +56,7 @@ const Products = () => {
         </div>
       </div>
       {/* 3 */}
-      <div className="card card-compact w-[300px] bg-base-100 shadow-md rounded-md border p-2">
+      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
         <figure>
           <img
             src={tire}
@@ -71,7 +71,7 @@ const Products = () => {
         </div>
       </div>
       {/* 4 */}
-      <div className="card card-compact w-[300px] bg-base-100 shadow-md rounded-md border p-2">
+      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
         <figure>
           <img
             src={spring}
@@ -86,7 +86,7 @@ const Products = () => {
         </div>
       </div>
       {/* 5 */}
-      <div className="card card-compact w-[300px] bg-base-100 shadow-md rounded-md border p-2">
+      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
         <figure>
           <img
             src={battery}

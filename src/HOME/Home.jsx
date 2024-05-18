@@ -13,6 +13,7 @@ import MoreServices from "../Navbar/MoreServices";
 import Products from "../Navbar/Products";
 import MoreProducts from "../Navbar/MoreProducts";
 import Team from "../Navbar/Team";
+import ChooseUsCards from "../Navbar/ChooseUsCards";
 
 const Home = () => {
   // const service = useLoaderData();
@@ -30,6 +31,7 @@ const Home = () => {
       <Text3></Text3>
       <Team></Team>
       <Text4></Text4>
+      <ChooseUsCards></ChooseUsCards>
       <Text5></Text5>
     </div>
   );

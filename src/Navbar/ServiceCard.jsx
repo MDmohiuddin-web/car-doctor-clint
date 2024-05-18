@@ -1,7 +1,7 @@
 import i from "../assets/Frame@1x.svg";
 const ServiceCard = ({ service }) => {
   return (
-    <div className="card card-compact w-[300px] bg-base-100 shadow-md rounded-md border p-2">
+    <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
       <figure>
         <img
           src={service.img}

@@ -7,15 +7,15 @@ import banerimg6 from "../assets/images/banner/6.jpg";
 
 const Banner = () => {
   return (
-    <div className="carousel w-full md:h-[500px] font-bold rounded-lg">
+    <div className="carousel w-full md:h-[550px] font-bold rounded-lg">
       <div id="slide1" className="carousel-item relative w-full">
         <img src={banerimg1} className="w-full " />
         <div className="absolute flex   h-full  w-full p-5 md:p-10 bottom-20 top-0  bg-gradient-to-r from-[#151515] to-[rgba(21, 21 ,21, 0)]">
-          <div className=" md:w-[50%]  md:my-10 ">
+          <div className=" md:w-[47%]  md:my-10 ">
             <h3 className="md:text-6xl text-white">
               Affordable Price For Car Servicing
             </h3>
-            <p className="md:my-5 my-2 text-white text-[10px] md:text-[16px]">
+            <p className="md:my-5  my-2 text-white text-[10px] md:text-[16px]">
               There are many variations of passages of available, majority have
               suffered alteration in some form
             </p>
@@ -29,7 +29,7 @@ const Banner = () => {
             </div>
           </div>
 
-          <div className="flex gap-5 absolute bottom-2 md:bottom-20 right-20 md:right-0 md:pr-10">
+          <div className="flex gap-5 absolute bottom-2 md:bottom-20 right-20 md:right-0 md:pr-10 px-2 ">
             <a
               href="#slide6"
               className="btn btn-circle bg-[#616c7d] border-0 text-white"
@@ -48,7 +48,7 @@ const Banner = () => {
       <div id="slide2" className="carousel-item relative w-full">
         <img src={banerimg2} className="w-full " />
         <div className="absolute flex   h-full  w-full p-5 md:p-10 bottom-20 top-0  bg-gradient-to-r from-[#151515] to-[rgba(21, 21 ,21, 0)]">
-          <div className=" md:w-[50%]  md:my-10 ">
+          <div className=" md:w-[47%]  md:my-10 ">
             <h3 className="md:text-6xl text-white">
               Affordable Price For Car Servicing
             </h3>
@@ -66,7 +66,7 @@ const Banner = () => {
             </div>
           </div>
 
-          <div className="flex gap-5 absolute bottom-2 md:bottom-20 right-20 md:right-0 md:pr-10">
+          <div className="flex gap-5 absolute bottom-2 md:bottom-20 right-20 md:right-0 md:pr-10 px-2">
             <a
               href="#slide1"
               className="btn btn-circle bg-[#616c7d] border-0 text-white"
@@ -86,7 +86,7 @@ const Banner = () => {
       <div id="slide3" className="carousel-item relative w-full">
         <img src={banerimg3} className="w-full " />
         <div className="absolute flex   h-full  w-full p-5 md:p-10 bottom-20 top-0  bg-gradient-to-r from-[#151515] to-[rgba(21, 21 ,21, 0)]">
-          <div className=" md:w-[50%]  md:my-10 ">
+          <div className=" md:w-[47%]  md:my-10 ">
             <h3 className="md:text-6xl text-white">
               Affordable Price For Car Servicing
             </h3>
@@ -104,7 +104,7 @@ const Banner = () => {
             </div>
           </div>
 
-          <div className="flex gap-5 absolute bottom-2 md:bottom-20 right-20 md:right-0 md:pr-10">
+          <div className="flex gap-5 absolute bottom-2 md:bottom-20 right-20 md:right-0 md:pr-10 px-2">
             <a
               href="#slide2"
               className="btn btn-circle bg-[#616c7d] border-0 text-white"
@@ -123,7 +123,7 @@ const Banner = () => {
       <div id="slide4" className="carousel-item relative w-full">
         <img src={banerimg4} className="w-full " />
         <div className="absolute flex   h-full  w-full p-5 md:p-10 bottom-20 top-0  bg-gradient-to-r from-[#151515] to-[rgba(21, 21 ,21, 0)]">
-          <div className=" md:w-[50%]  md:my-10 ">
+          <div className=" md:w-[47%]  md:my-10 ">
             <h3 className="md:text-6xl text-white">
               Affordable Price For Car Servicing
             </h3>
@@ -141,7 +141,7 @@ const Banner = () => {
             </div>
           </div>
 
-          <div className="flex gap-5 absolute bottom-2 md:bottom-20 right-20 md:right-0 md:pr-10">
+          <div className="flex gap-5 absolute bottom-2 md:bottom-20 right-20 md:right-0 md:pr-10 px-2">
             <a
               href="#slide3"
               className="btn btn-circle bg-[#616c7d] border-0 text-white"
@@ -161,7 +161,7 @@ const Banner = () => {
       <div id="slide5" className="carousel-item relative w-full">
         <img src={banerimg5} className="w-full " />
         <div className="absolute flex   h-full  w-full p-5 md:p-10 bottom-20 top-0  bg-gradient-to-r from-[#151515] to-[rgba(21, 21 ,21, 0)]">
-          <div className=" md:w-[50%]  md:my-10 ">
+          <div className=" md:w-[47%]  md:my-10 ">
             <h3 className="md:text-6xl text-white">
               Affordable Price For Car Servicing
             </h3>
@@ -179,7 +179,7 @@ const Banner = () => {
             </div>
           </div>
 
-          <div className="flex gap-5 absolute bottom-2 md:bottom-20 right-20 md:right-0 md:pr-10">
+          <div className="flex gap-5 absolute bottom-2 md:bottom-20 right-20 md:right-0 md:pr-10 px-2">
             <a
               href="#slide4"
               className="btn btn-circle bg-[#616c7d] border-0 text-white"
@@ -198,7 +198,7 @@ const Banner = () => {
       <div id="slide6" className="carousel-item relative w-full">
         <img src={banerimg6} className="w-full " />
         <div className="absolute flex   h-full  w-full p-5 md:p-10 bottom-20 top-0  bg-gradient-to-r from-[#151515] to-[rgba(21, 21 ,21, 0)]">
-          <div className=" md:w-[50%]  md:my-10 ">
+          <div className=" md:w-[47%]  md:my-10 ">
             <h3 className="md:text-6xl text-white">
               Affordable Price For Car Servicing
             </h3>
@@ -216,7 +216,7 @@ const Banner = () => {
             </div>
           </div>
 
-          <div className="flex gap-5 absolute bottom-2 md:bottom-20 right-20 md:right-0 md:pr-10">
+          <div className="flex gap-5 absolute bottom-2 md:bottom-20 right-20 md:right-0 md:pr-10 px-2">
             <a
               href="#slide5"
               className="btn btn-circle bg-[#616c7d] border-0 text-white"
@@ -236,7 +236,7 @@ const Banner = () => {
       <div id="slide1" className="carousel-item relative w-full">
         <img src={banerimg1} className="w-full " />
         <div className="absolute flex   h-full  w-full p-5 md:p-10 bottom-20 top-0  bg-gradient-to-r from-[#151515] to-[rgba(21, 21 ,21, 0)]">
-          <div className=" md:w-[50%]  md:my-10 ">
+          <div className=" md:w-[47%]  md:my-10 ">
             <h3 className="md:text-6xl text-white">
               Affordable Price For Car Servicing
             </h3>
@@ -254,7 +254,7 @@ const Banner = () => {
             </div>
           </div>
 
-          <div className="flex gap-5 absolute bottom-2 md:bottom-20 right-20 md:right-0 md:pr-10">
+          <div className="flex gap-5 absolute bottom-2 md:bottom-20 right-20 md:right-0 md:pr-10 px-2">
             <a
               href="#slide6"
               className="btn btn-circle bg-[#616c7d] border-0 text-white"

@@ -17,7 +17,7 @@ const Services = () => {
   }, []); // Empty dependency array ensures the fetch runs once
 
   return (
-    <div className="my-5 flex flex-wrap gap-5">
+    <div className="my-5 flex flex-wrap gap-5 justify-center">
       {/* <h4>Total Services: {services.length}</h4> */}
       {services.map((service) => (
         <ServiceCard key={service._id} service={service} />
