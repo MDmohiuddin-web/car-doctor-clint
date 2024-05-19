@@ -3,8 +3,32 @@ import facebook from "../assets/Facebook.svg";
 import linkding from "../assets/Linkding.svg";
 import Google from "../assets/Google.svg";
 import im from "../assets/images/login/login.svg";
+import { useContext } from "react";
+import { AuthContext } from "../Auth/Authprovider";
 
 const Sign_Up = () => {
+  const { signup } = useContext(AuthContext);
+
+  const signup_submit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name, email, password);
+    signup(email, password)
+      .then((rec) => {
+        // Signed in
+        const user = rec.user;
+        console.log(user);
+        //...
+      })
+      .catch((error) => {
+        console.log(error);
+        //..
+      });
+  };
+
   return (
     <div className=" flex-wrap flex  my-10  items-center ">
       <div className="bg-white p-6 rounded-lg  w-full md:w-[30%] m-auto my-5 md:h-[300px] ">
@@ -14,7 +38,7 @@ const Sign_Up = () => {
       <div className="bg-white p-6 rounded-lg shadow-md w-full md:w-[35%] m-auto">
         <h2 className="text-2xl font-semibold mb-4 text-center"> sign up</h2>
 
-        <form>
+        <form onSubmit={signup_submit}>
           <div className="mb-4">
             <label
               htmlFor="name"
@@ -34,7 +58,6 @@ const Sign_Up = () => {
           <div className="mb-4">
             <label
               htmlFor="email"
-           
               className="block text-sm font-medium text-gray-700"
             >
               Email
@@ -57,7 +80,7 @@ const Sign_Up = () => {
               Password
             </label>
             <input
-            name="password"
+              name="password"
               type="password"
               id="password"
               className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200"
@@ -75,7 +98,6 @@ const Sign_Up = () => {
 
           <p className="mt-4 text-gray-600 text-center">Or Sign In with</p>
 
-          
           <div className="flex gap-5 my-4 justify-center ">
             <img src={Google} alt="" />
             <img src={facebook} alt="" />
@@ -85,10 +107,8 @@ const Sign_Up = () => {
 
         <p className="mt-4 text-blue-500 text-center">
           Have an account?
-         
-         
           <Link to="/login" className="text-red-500 pl-2">
-          Log In
+            Log In
           </Link>
         </p>
       </div>

@@ -12,6 +12,7 @@ import About from "./Navbar/About";
 import Services from "./Navbar/Services";
 import Blog from "./Navbar/Blog";
 import Contact from "./Navbar/Contact";
+import Authprovider from "./Auth/Authprovider";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -54,6 +55,8 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <App /> */}
-    <RouterProvider router={router} />
+    <Authprovider>
+      <RouterProvider router={router} />
+    </Authprovider>
   </React.StrictMode>
 );

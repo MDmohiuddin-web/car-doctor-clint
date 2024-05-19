@@ -14,10 +14,10 @@ const Team = () => {
             className="h-[170px] my-2  rounded-lg "
           />
         </figure>
-        <div className="p-2 text-center">
+        <div className="p-2 text-center justify-center  items-center   w-full">
           <h2 className="text-2xl">Car Engine </h2>
           <p className="py-1">Engine Expert</p>
-          <img src={social} alt="" className='h-[30%] pl-[20%]'/>
+          <img src={social} alt="" className='h-[30%]  m-auto' />
         </div>
       </div>
       <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
@@ -31,7 +31,7 @@ const Team = () => {
         <div className="p-2 text-center">
           <h2 className="text-2xl">Car Engine </h2>
           <p className="py-1">Engine Expert</p>
-          <img src={social} alt="" className='h-[30%] pl-[20%]'/>
+          <img src={social} alt="" className='h-[30%] m-auto'/>
         </div>
       </div>
       <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
@@ -45,7 +45,7 @@ const Team = () => {
         <div className="p-2 text-center">
           <h2 className="text-2xl">Car Engine </h2>
           <p className="py-1">Engine Expert</p>
-          <img src={social} alt="" className='h-[30%] pl-[20%]'/>
+          <img src={social} alt="" className='h-[30%] m-auto'/>
         </div>
       </div>
     </div>
