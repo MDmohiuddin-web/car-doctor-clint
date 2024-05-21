@@ -11,9 +11,9 @@ const firebaseConfig = {
   // projectId:import.meta.env.React_projectId,
   // storageBucket:import.meta.env.React_storageBucket,
   // messagingSenderId:import.meta.env.React_messagingSenderId,
-  // appId:import.meta.env.React_appId
+  // appId:import.meta.env.React_appId,
 
-
+  
   apiKey: "AIzaSyBlVQIG6WCiz5yP0XrgufLm6nNFLDcVa7o",
   authDomain: "car-doctor-f2b63.firebaseapp.com",
   projectId: "car-doctor-f2b63",

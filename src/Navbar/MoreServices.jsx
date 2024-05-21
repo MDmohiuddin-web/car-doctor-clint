@@ -1,4 +1,4 @@
-import React from "react";
+
 import info from "../assets/Group.svg";
 
 const MoreServices = () => {

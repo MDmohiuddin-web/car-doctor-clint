@@ -13,6 +13,7 @@ import Services from "./Navbar/Services";
 import Blog from "./Navbar/Blog";
 import Contact from "./Navbar/Contact";
 import Authprovider from "./Auth/Authprovider";
+import CheckOutService from "./Navbar/CheckOutService";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/Contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/checkout",
+        element: <CheckOutService></CheckOutService>,
       },
     ],
   },

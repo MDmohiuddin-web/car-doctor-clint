@@ -6,7 +6,7 @@ import social from '../assets/midia.svg'
 const Team = () => {
   return (
     <div className="flex flex-wrap gap-5 justify-center">
-      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
+      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2 hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
         <figure>
           <img
             src={member1}
@@ -20,7 +20,7 @@ const Team = () => {
           <img src={social} alt="" className='h-[30%]  m-auto' />
         </div>
       </div>
-      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
+      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2 hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
         <figure>
           <img
             src={member2}
@@ -34,7 +34,7 @@ const Team = () => {
           <img src={social} alt="" className='h-[30%] m-auto'/>
         </div>
       </div>
-      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2">
+      <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2 hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
         <figure>
           <img
             src={member3}
