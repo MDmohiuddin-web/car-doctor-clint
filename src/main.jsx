@@ -14,6 +14,7 @@ import Blog from "./Navbar/Blog";
 import Contact from "./Navbar/Contact";
 import Authprovider from "./Auth/Authprovider";
 import CheckOutService from "./Navbar/CheckOutService";
+import CheckOut from "./Navbar/CheckOut";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -50,8 +51,16 @@ const router = createBrowserRouter([
         element: <Contact></Contact>,
       },
       {
-        path: "/checkout",
+        path: "/checkout/id",
         element: <CheckOutService></CheckOutService>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/services/${params.id}`),
+      },
+      {
+        path: "/CheckOutDetails/id",
+        element: <CheckOut></CheckOut>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/services/${params.id}`),
       },
     ],
   },

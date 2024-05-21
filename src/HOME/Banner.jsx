@@ -9,7 +9,7 @@ const Banner = () => {
   return (
     <div className="carousel w-full md:h-[550px] font-bold rounded-lg">
       <div id="slide1" className="carousel-item relative w-full">
-        <img src={banerimg1} className="w-full " />
+        <img src={banerimg1} className="w-full object-cover " />
         <div className="absolute flex   h-full  w-full p-5 md:p-10 bottom-20 top-0  bg-gradient-to-r from-[#151515] to-[rgba(21, 21 ,21, 0)]">
           <div className=" md:w-[47%]  md:my-10 ">
             <h3 className="md:text-6xl text-white">
@@ -46,7 +46,7 @@ const Banner = () => {
         </div>
       </div>
       <div id="slide2" className="carousel-item relative w-full">
-        <img src={banerimg2} className="w-full " />
+        <img src={banerimg2} className="w-full object-cover " />
         <div className="absolute flex   h-full  w-full p-5 md:p-10 bottom-20 top-0  bg-gradient-to-r from-[#151515] to-[rgba(21, 21 ,21, 0)]">
           <div className=" md:w-[47%]  md:my-10 ">
             <h3 className="md:text-6xl text-white">
@@ -84,7 +84,7 @@ const Banner = () => {
       </div>
 
       <div id="slide3" className="carousel-item relative w-full">
-        <img src={banerimg3} className="w-full " />
+        <img src={banerimg3} className="w-full object-cover  " />
         <div className="absolute flex   h-full  w-full p-5 md:p-10 bottom-20 top-0  bg-gradient-to-r from-[#151515] to-[rgba(21, 21 ,21, 0)]">
           <div className=" md:w-[47%]  md:my-10 ">
             <h3 className="md:text-6xl text-white">
@@ -121,7 +121,7 @@ const Banner = () => {
         </div>
       </div>
       <div id="slide4" className="carousel-item relative w-full">
-        <img src={banerimg4} className="w-full " />
+        <img src={banerimg4} className="w-full object-cover " />
         <div className="absolute flex   h-full  w-full p-5 md:p-10 bottom-20 top-0  bg-gradient-to-r from-[#151515] to-[rgba(21, 21 ,21, 0)]">
           <div className=" md:w-[47%]  md:my-10 ">
             <h3 className="md:text-6xl text-white">
@@ -159,7 +159,7 @@ const Banner = () => {
       </div>
 
       <div id="slide5" className="carousel-item relative w-full">
-        <img src={banerimg5} className="w-full " />
+        <img src={banerimg5} className="w-full object-cover " />
         <div className="absolute flex   h-full  w-full p-5 md:p-10 bottom-20 top-0  bg-gradient-to-r from-[#151515] to-[rgba(21, 21 ,21, 0)]">
           <div className=" md:w-[47%]  md:my-10 ">
             <h3 className="md:text-6xl text-white">
@@ -196,7 +196,7 @@ const Banner = () => {
         </div>
       </div>
       <div id="slide6" className="carousel-item relative w-full">
-        <img src={banerimg6} className="w-full " />
+        <img src={banerimg6} className="w-full object-cover " />
         <div className="absolute flex   h-full  w-full p-5 md:p-10 bottom-20 top-0  bg-gradient-to-r from-[#151515] to-[rgba(21, 21 ,21, 0)]">
           <div className=" md:w-[47%]  md:my-10 ">
             <h3 className="md:text-6xl text-white">
@@ -234,7 +234,7 @@ const Banner = () => {
       </div>
 
       <div id="slide1" className="carousel-item relative w-full">
-        <img src={banerimg1} className="w-full " />
+        <img src={banerimg1} className="w-full object-cover " />
         <div className="absolute flex   h-full  w-full p-5 md:p-10 bottom-20 top-0  bg-gradient-to-r from-[#151515] to-[rgba(21, 21 ,21, 0)]">
           <div className=" md:w-[47%]  md:my-10 ">
             <h3 className="md:text-6xl text-white">
