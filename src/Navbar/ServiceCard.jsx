@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import i from "../assets/Frame@1x.svg";
+
 const ServiceCard = ({ service }) => {
   const { title, img, price, _id} = service;
 
+  
   return (
     <div className="card card-compact w-full md:w-[300px] bg-base-100 shadow-md rounded-md border p-2 hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 ">
       <figure>
@@ -19,7 +21,7 @@ const ServiceCard = ({ service }) => {
             <p className="font-bold text-red-500">price : {price} $</p>
           </div>
           <div>
-            <Link to={`/checkout/${_id}`} >
+            <Link to={`/AddNewService/${_id}`} >
               <img src={i} alt="" className="cursor-pointer" />
             </Link>
           </div>

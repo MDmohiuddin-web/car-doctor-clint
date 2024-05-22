@@ -11,10 +11,10 @@ const Login = () => {
   const login_submit = (e) => {
     e.preventDefault();
     const form = e.target;
-    
+
     const email = form.email.value;
     const password = form.password.value;
-    console.log( email, password);
+    console.log(email, password);
     sign(email, password)
       .then((rec) => {
         // Signed in

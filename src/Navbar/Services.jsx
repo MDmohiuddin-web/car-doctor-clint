@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+
+import { useEffect, useState } from "react";
 import ServiceCard from "./ServiceCard"; // Assuming you have a ServiceCard component
 
 const Services = () => {
@@ -7,7 +8,7 @@ const Services = () => {
   useEffect(() => {
     // Fetch data from the local JSON file
     // fetch("services.json")
-    fetch("http://localhost:3000/services")
+    fetch("http://localhost:3000/services" )
       .then((res) => res.json())
       .then((data) => {
         setServices(data); // Update state with the fetched data
