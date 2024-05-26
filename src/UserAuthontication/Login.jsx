@@ -19,7 +19,12 @@ const Login = () => {
       .then((rec) => {
         // Signed in
         const user = rec.user;
-        console.log(user);
+        console.log(user)
+        if (user) {
+          form.reset();
+          alert("login success");
+          window.location.reload();
+        }
         //...
       })
       .catch((error) => {

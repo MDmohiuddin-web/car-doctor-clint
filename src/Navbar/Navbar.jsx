@@ -2,19 +2,22 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import frame from "../assets/Frame.svg";
 import frame1 from "../assets/Frame1.svg";
+import { useContext } from "react";
+import { AuthContext } from "../Auth/Authprovider";
 
 const Navbar = () => {
+  const { user, sinout } = useContext(AuthContext);
+  const logout = () => {
+    sinout()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
   const links = (
     <>
       <li className="hover:text-my_color-400">
         <NavLink to="/">Home </NavLink>
       </li>
-      <li className="hover:text-my_color-400">
-        <NavLink to="/login">Log in</NavLink>
-      </li>
-      {/* <li className="hover:text-my_color-400">
-        <NavLink to="/signup">sign up</NavLink>
-      </li> */}
       <li className="hover:text-my_color-400">
         <NavLink to="/about">about</NavLink>
       </li>
@@ -27,6 +30,29 @@ const Navbar = () => {
       <li className="hover:text-my_color-400">
         <NavLink to="/Contact">Contact</NavLink>
       </li>
+      <li className="hover:text-my_color-400">
+        <NavLink to="/Profile">Profile</NavLink>
+      </li>
+
+      {/* <li className="hover:text-my_color-400">
+        <NavLink to="/signup">sign up</NavLink>
+      </li> */}
+
+      {/* i dent need it  */}
+      {/* {user?.email ? (
+        <li className="hover:text-my_color-400">
+          <button className="text-red-500" onClick={logout}>
+            <NavLink to="/">Logout</NavLink>
+          </button>
+        </li>
+      ) : (
+        <li className="hover:text-my_color-400">
+          <NavLink to="/login">Log in</NavLink>
+        </li>
+      )} */}
+      {/*  */}
+      
+      
     </>
   );
   return (
@@ -67,11 +93,58 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        <div className={`navbar-end  gap-3`}>
-          <img src={frame} alt=""  className="cursor-pointer" />
+        {/* <div className={`navbar-end  gap-3`}>
+          <img src={frame} alt="" className="cursor-pointer" />
           <img src={frame1} alt="" className="cursor-pointer" />
-          
-          <button className="text-red-500  btn-outline btn ">Appointment</button>
+          <button className="text-red-500  btn-outline btn ">
+            Appointment
+          </button>
+
+
+        </div> */}
+        <div className={`navbar-end  gap-10 md:gap-0`}>
+          <div className={`flex justify-between gap-2 md:gap-5 pr-4`}>
+            <img src={frame} alt="" className="cursor-pointer" />
+            <img src={frame1} alt="" className="cursor-pointer" />
+            <button className="text-red-500 btn-outline btn  ">
+              Appointment
+            </button>
+          </div>
+
+          {user ? (
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img
+                    title={user?.displayName}
+                    src={
+                      user?.photoURL ||
+                    "https://source.unsplash.com/150x150/?portrait?3"
+                    }
+                  />
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <Link to="/Profile" className="btn btn-sm  btn-ghost">
+                    {user?.displayName || "user name not found"}
+                  </Link>
+                </li>
+                <li>
+                  <button onClick={logout} className="btn   btn-ghost">
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <Link to="/login">
+              <button className="btn btn-sm  btn-ghost">Login</button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

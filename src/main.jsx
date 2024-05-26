@@ -15,6 +15,8 @@ import Contact from "./Navbar/Contact";
 import Authprovider from "./Auth/Authprovider";
 import CheckOutService from "./Navbar/CheckOutService";
 import AddNewService from "./Navbar/AddNewService";
+import BookService from "./Navbar/BookService";
+import Profile from "./Navbar/Profile";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +52,16 @@ const router = createBrowserRouter([
       {
         path: "/Contact",
         element: <Contact></Contact>,
+      },{
+        path: "/Profile",
+        element: <Profile></Profile>,
+      }
+      ,
+      {
+        path: "/BookService/:id",
+        element: <BookService></BookService>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/services/${params.id} `),
       },
       {
         path: "/CheckOutService/:id",

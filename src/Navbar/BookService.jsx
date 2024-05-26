@@ -2,42 +2,62 @@ import { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Auth/Authprovider";
 
-const CheckOutService = () => {
-  
+const BookService = () => {
   const service = useLoaderData();
-  const { title,price } = service;
+  const { title, price, _id ,img} = service;
 
-   const {user}=useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   //, img,_id
 
   const servicehandelr = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const serviceName = form.serviceName.value;
+    const Name = form.Name.value;
     const dates = form.dates.value;
-    const email = form.email.value;
+    const email = user?.email;
+
     // const Phone = form.Phone.value;
-    const productDescription = form.productDescription.value;
+    // const Order = form.Order.value;
+    const Order = {
+      Name,
+      email,
+      dates,
+      servicetitele: title,
+      service_id: _id,
+      price,
+      img
+      // Phone,
+    };
     // const serviceType = form.serviceType.value;
     console.log(
+        Name,
+        dates,
+        email,
+        Order
       // serviceType,
-      serviceName,
-      dates,
-      email,
       // Phone,
-      productDescription
-    );
-  };
+    )
 
+    fetch(
+      "http://localhost:3000/bookings",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(Order),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
   return (
     <div className="w-full mx-auto px-5  bg-white rounded-lg ">
       <div className="img">
         <h2 className="text-2xl md:text-4xl font-semibold mb-4 text-white absolute top-1/2 left-[10%]">
-          Check Out
+          Book Service
         </h2>
         <div className="bg-red-500 absolute bottom-0 px-10 p-3 left-[40%]  text-white rounded-t-xl ">
-          <Link to="/">Home</Link> / <Link>Checkout</Link>
+          <Link to="/">Home</Link> / <Link>Book Service</Link>
         </div>
       </div>
       {/*  */}
@@ -53,15 +73,16 @@ const CheckOutService = () => {
           <div className="flex flex-wrap gap-5 justify-between">
             <div className="mb-4  md:w-[48%]">
               <label className="block text-sm font-medium text-gray-700">
-                Service Name
+                Name
               </label>
               <input
                 required
                 type="text"
-                id="serviceName"
-                name="serviceName"
+                id="Name"
+                name="Name"
+                defaultValue={user?.displayName}
                 className="mt-1 p-2 w-full border rounded-md"
-                placeholder="Enter service name"
+                placeholder="Enter  name"
               />
             </div>
             {/*  */}
@@ -74,7 +95,6 @@ const CheckOutService = () => {
                 type="date"
                 id="dates"
                 name="dates"
-
                 className="mt-1 p-2 w-full border rounded-md"
                 placeholder="Enter service price"
               />
@@ -111,19 +131,19 @@ const CheckOutService = () => {
             </div>
             {/*  */}
             <div className="mb-4  md:w-[48%]">
-                <label className="block text-sm font-medium text-gray-700">
-                  Service Price
-                </label>
-                <input
+              <label className="block text-sm font-medium text-gray-700">
+                Service Price
+              </label>
+              <input
                 required
-                  type="number"
-                  id="servicePrice"
-                  name="servicePrice"
-                  defaultValue={price}
-                  className="mt-1 p-2 w-full border rounded-md"
-                  placeholder="Enter service price"
-                />
-              </div>
+                type="number"
+                id="servicePrice"
+                name="servicePrice"
+                defaultValue={price}
+                className="mt-1 p-2 w-full border rounded-md"
+                placeholder="Enter service price"
+              />
+            </div>
             {/*  */}
             {/* <div className="mb-4  md:w-[48%]">
               <label className="block text-sm font-medium text-gray-700">
@@ -147,8 +167,8 @@ const CheckOutService = () => {
             </label>
             <textarea
               required
-              id="productDescription"
-              name="productDescription"
+              id="Order"
+              name="Order"
               rows="3"
               className="mt-1 p-2 w-full border rounded-md"
               placeholder="Enter product description"
@@ -166,4 +186,4 @@ const CheckOutService = () => {
   );
 };
 
-export default CheckOutService;
+export default BookService;

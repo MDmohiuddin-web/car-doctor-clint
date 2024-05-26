@@ -21,7 +21,7 @@ const ServiceCard = ({ service }) => {
             <p className="font-bold text-red-500">price : {price} $</p>
           </div>
           <div>
-            <Link to={`/AddNewService/${_id}`} >
+            <Link to={`/BookService/${_id}`} >
               <img src={i} alt="" className="cursor-pointer" />
             </Link>
           </div>
