@@ -1,29 +1,41 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
 
 import app from "../Firebase/Firebase.config";
 
- export const AuthContext = createContext(null);
-   const auth = getAuth(app);
+export const AuthContext = createContext(null);
+const auth = getAuth(app);
 const Authprovider = ({ children }) => {
-  
   const [user, setUser] = useState(null);
   const [loader, setLoader] = useState(true);
 
-  const signup = ( email, password) => {
+  const signup = (email, password) => {
     setLoader(true);
-  return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const sign = (email, password) => {
     setLoader(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
-  const sinout= () => {
+  const sinout = () => {
     setLoader(true);
     return signOut(auth);
-  }
-
+  };
+  const updateUserProfile = (name, image) => {
+    setLoader(true);
+    // toast.success('updateUserProfile success full')
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: image,
+    });
+  };
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
@@ -35,7 +47,7 @@ const Authprovider = ({ children }) => {
         setLoader(false);
       }
     });
-    return ()=>(unsubscribe()) ;
+    return () => unsubscribe();
   }, []);
 
   const Authinfo = {
@@ -43,7 +55,10 @@ const Authprovider = ({ children }) => {
     setUser,
     loader,
     setLoader,
-    signup, sign,sinout
+    signup,
+    sign,
+    sinout,
+    updateUserProfile,
   };
   return (
     <div>

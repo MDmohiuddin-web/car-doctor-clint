@@ -30,36 +30,35 @@ const Navbar = () => {
       <li className="hover:text-my_color-400">
         <NavLink to="/Contact">Contact</NavLink>
       </li>
-      <li className="hover:text-my_color-400">
-        <NavLink to="/Profile">Profile</NavLink>
-      </li>
 
       {/* <li className="hover:text-my_color-400">
         <NavLink to="/signup">sign up</NavLink>
       </li> */}
 
       {/* i dent need it  */}
-      {/* {user?.email ? (
-        <li className="hover:text-my_color-400">
-          <button className="text-red-500" onClick={logout}>
-            <NavLink to="/">Logout</NavLink>
-          </button>
-        </li>
+      {user?.email ? (
+        <>
+         
+          <li className="hover:text-my_color-400">
+            <NavLink to="/Booking">Booking</NavLink>
+          </li>
+          <li className="hover:text-my_color-400">
+            <NavLink to="/Profile">Profile</NavLink>
+          </li>
+        </>
       ) : (
         <li className="hover:text-my_color-400">
           <NavLink to="/login">Log in</NavLink>
         </li>
-      )} */}
+      )}
       {/*  */}
-      
-      
     </>
   );
   return (
-    <div className=" my-5 ">
+    <div className=" my-5  ">
       <div className="navbar bg-base-100">
-        <div className="navbar-start">
-          <div className="dropdown">
+        <div className="navbar-start md:w-[300px] ">
+          <div className="dropdown w-auto">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,27 +82,16 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Link
-            to="/"
-            className="btn btn-ghost text-xl md:text-4xl hover:text-my_color-400"
-          >
-            <img src={logo} alt="" className="h-[60px]" />
+          <Link to="/">
+            <img src={logo} alt="" className="h-[60px] mr-5 " />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        {/* <div className={`navbar-end  gap-3`}>
-          <img src={frame} alt="" className="cursor-pointer" />
-          <img src={frame1} alt="" className="cursor-pointer" />
-          <button className="text-red-500  btn-outline btn ">
-            Appointment
-          </button>
 
-
-        </div> */}
-        <div className={`navbar-end  gap-10 md:gap-0`}>
-          <div className={`flex justify-between gap-2 md:gap-5 pr-4`}>
+        <div className={`navbar-end  gap-10  md:gap-10`}>
+          <div className={`flex justify-between gap-1 md:gap-5 pr-4`}>
             <img src={frame} alt="" className="cursor-pointer" />
             <img src={frame1} alt="" className="cursor-pointer" />
             <button className="text-red-500 btn-outline btn  ">
@@ -119,7 +107,7 @@ const Navbar = () => {
                     title={user?.displayName}
                     src={
                       user?.photoURL ||
-                    "https://source.unsplash.com/150x150/?portrait?3"
+                      "https://source.unsplash.com/150x150/?portrait?3"
                     }
                   />
                 </div>

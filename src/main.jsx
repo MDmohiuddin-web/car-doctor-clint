@@ -17,6 +17,9 @@ import CheckOutService from "./Navbar/CheckOutService";
 import AddNewService from "./Navbar/AddNewService";
 import BookService from "./Navbar/BookService";
 import Profile from "./Navbar/Profile";
+import Booking from "./Navbar/Booking";
+import PrivateRout from "./Private/PrivateRout";
+
 
 const router = createBrowserRouter([
   {
@@ -54,7 +57,11 @@ const router = createBrowserRouter([
         element: <Contact></Contact>,
       },{
         path: "/Profile",
-        element: <Profile></Profile>,
+        element:<PrivateRout><Profile></Profile></PrivateRout> ,
+      },
+      {
+        path:'/Booking',
+        element:<PrivateRout><Booking></Booking></PrivateRout>,
       }
       ,
       {

@@ -4,7 +4,7 @@ import { AuthContext } from "../Auth/Authprovider";
 
 const BookService = () => {
   const service = useLoaderData();
-  const { title, price, _id ,img} = service;
+  const { title, price, _id, img } = service;
 
   const { user } = useContext(AuthContext);
 
@@ -26,27 +26,24 @@ const BookService = () => {
       servicetitele: title,
       service_id: _id,
       price,
-      img
+      img,
       // Phone,
     };
     // const serviceType = form.serviceType.value;
     console.log(
-        Name,
-        dates,
-        email,
-        Order
+      Name,
+      dates,
+      email,
+      Order
       // serviceType,
       // Phone,
-    )
+    );
 
-    fetch(
-      "http://localhost:3000/bookings",
-      {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(Order),
-      }
-    )
+    fetch("http://localhost:3000/bookings", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(Order),
+    })
       .then((res) => res.json())
       .then((data) => console.log(data));
   };
@@ -175,6 +172,10 @@ const BookService = () => {
             ></textarea>
           </div>
           <button
+            onClick={() => {
+              alert("Your Booking is Done");
+              
+            }}
             type="submit"
             className="bg-red-500 text-white py-2 px-4 rounded-md w-full hover:bg-red-600"
           >
