@@ -19,7 +19,7 @@ import BookService from "./Navbar/BookService";
 import Profile from "./Navbar/Profile";
 import Booking from "./Navbar/Booking";
 import PrivateRout from "./Private/PrivateRout";
-
+import ServiceDetails from "./Navbar/ServiceDetails";
 
 const router = createBrowserRouter([
   {
@@ -55,15 +55,28 @@ const router = createBrowserRouter([
       {
         path: "/Contact",
         element: <Contact></Contact>,
-      },{
-        path: "/Profile",
-        element:<PrivateRout><Profile></Profile></PrivateRout> ,
       },
       {
-        path:'/Booking',
-        element:<PrivateRout><Booking></Booking></PrivateRout>,
-      }
-      ,
+        path: "/Profile",
+        element: (
+          <PrivateRout>
+            <Profile></Profile>
+          </PrivateRout>
+        ),
+      },
+      {
+        path: "/Booking",
+        element: (
+          <PrivateRout>
+            <Booking></Booking>
+          </PrivateRout>
+        ),
+      },
+      {
+        path: "/ServiceDetails",
+        element: <ServiceDetails></ServiceDetails>,
+      },
+
       {
         path: "/BookService/:id",
         element: <BookService></BookService>,

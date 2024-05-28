@@ -21,3 +21,15 @@
     position: relative;
     
 }
+.images{
+    background-image: url('../src/assets/images/banner/2.jpg') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    height: 100vh;
+    height: 400px;
+    width: 100%;
+    position: relative;
+    
+}

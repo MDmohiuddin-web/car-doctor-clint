@@ -1,5 +1,6 @@
 import img1 from "../assets/images/about_us/person.jpg";
 import img2 from "../assets/images/about_us/parts.jpg";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -27,9 +28,9 @@ const About = () => {
           the majority have suffered alteration in some form, by injected
           humour, or randomized words which dent look even slightly believable.
         </p>
-        <button className="bg-red-500 text-white  btn border-none  ">
+        <Link to='/ServiceDetails' className="bg-red-500 text-white  btn border-none  ">
           Get More Info
-        </button>
+        </Link>
       </div>
     </div>
   );

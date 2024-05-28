@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 import i from "../assets/Frame@1x.svg";
 
-const ServiceCard = ({ service }) => {
+const ServiceCard = ({ service ,loader}) => {
   const { title, img, price, _id} = service;
+  if (loader) {
+    return (
+      <div className="h-screen flex justify-center items-center text-4xl">
+       <span className="loading loading-ring loading-lg"></span>
+      </div>
+    );
+  }
 
   
   return (

@@ -54,7 +54,7 @@ const BookService = () => {
           Book Service
         </h2>
         <div className="bg-red-500 absolute bottom-0 px-10 p-3 left-[40%]  text-white rounded-t-xl ">
-          <Link to="/">Home</Link> / <Link>Book Service</Link>
+          <Link to="/">Home</Link> / <Link to='/Booking'>Booked Serviced</Link>
         </div>
       </div>
       {/*  */}

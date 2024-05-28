@@ -1,8 +1,10 @@
-const ard = ({ booking }) => {
-  const { Name, servicetitele, dates, price, img, _id } = booking;
+
+
+const Ard = ({ booking, setBookings, bookings }) => {
+  const { Name, servicetitele, dates, price, img, _id, status } = booking;
 
   const deleted = (id) => {
-    const priced = confirm("delete this booking?");
+    const priced = window.confirm("Delete this booking?");
     if (priced) {
       fetch(`http://localhost:3000/bookings/${id}`, {
         method: "DELETE",
@@ -11,31 +13,36 @@ const ard = ({ booking }) => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          if (data.acknowledged) {
-            window.location.reload();
+          if (data.deletedCount > 0) {
+            alert("Deleted successfully");
+            const remaining = bookings.filter((booking) => booking._id !== id);
+            setBookings(remaining);
           }
         });
     }
   };
 
+  const handleConfirm = (id) => {
+    fetch(`http://localhost:3000/bookings/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ status: "confirm" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          const remaining = bookings.filter((booking) => booking._id !== id);
+          const updated = bookings.find((booking) => booking._id === id);
+          updated.status = "confirm";
+          const newBooking = [updated, ...remaining];
+          setBookings(newBooking);
+        }
+      });
+  };
 
-  const HandelConfirm=id=>{
-    fetch(`http://localhost:3000/bookings/${id}`
-        , {
-        method: "PATCH",
-        headers: { "content-type": "application/json" },
-        json: JSON.stringify({ status: "Confirmed" }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.acknowledged) {
-            window.location.reload();
-          }
-        })
-    
-    
-  }
   return (
     <tbody>
       <tr className="hover:scale-105 duration-300 hover:shadow-lg translate-x-5 ease-out">
@@ -58,24 +65,22 @@ const ard = ({ booking }) => {
             </div>
           </div>
         </td>
-        <td>
-          {price} $
-          {/* <br />
-              <span className="badge badge-ghost badge-sm">
-                Desktop Support Technician
-              </span> */}
-        </td>
+        <td>{price} $</td>
         <td>{dates}</td>
         <th className="flex justify-center gap-2">
-          <button
-            onClick={() => HandelConfirm(_id)}
-            className="text-red-500 btn-outline btn"
-          >
-            Confirm
-          </button>
+          {status === "confirm" ? (
+            <span className="text-green-500 btn-outline btn">Confirm</span>
+          ) : (
+            <button
+              onClick={() => handleConfirm(_id)}
+              className="text-red-500 btn-outline btn"
+            >
+              Please Confirm
+            </button>
+          )}
           <button
             onClick={() => deleted(_id)}
-            className="bg-red-500 text-white  btn border-none"
+            className="bg-red-500 text-white btn border-none"
           >
             Delete
           </button>
@@ -85,4 +90,4 @@ const ard = ({ booking }) => {
   );
 };
 
-export default ard;
+export default Ard;

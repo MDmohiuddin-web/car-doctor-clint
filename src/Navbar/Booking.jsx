@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../Auth/Authprovider";
 import { useState } from "react";
 import BookingCard from "./BookingCard";
-import { Link } from "react-router-dom";
+
 
 const Booking = () => {
   const { user } = useContext(AuthContext);
@@ -14,7 +14,7 @@ const Booking = () => {
       .then((data) => {
         setBookings(data);
       });
-  }, []);
+  }, [url]);
 
   return (
     <div className="overflow-x-auto capitalize">
@@ -30,7 +30,9 @@ const Booking = () => {
       <table className="table overflow-hidden">
         {/* <h1 className="text-3xl text-center">Booking {bookings.length}</h1> */}
         {bookings.map((booking) => (
-          <BookingCard key={booking._id} booking={booking}></BookingCard>
+          <BookingCard key={booking._id} booking={booking}
+          bookings={bookings} setBookings={setBookings} 
+          ></BookingCard>
         ))}
       </table>
     </div>
