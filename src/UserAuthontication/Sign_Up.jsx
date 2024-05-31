@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import facebook from "../assets/Facebook.svg";
 import linkding from "../assets/Linkding.svg";
 import Google from "../assets/Google.svg";
@@ -8,7 +8,8 @@ import { AuthContext } from "../Auth/Authprovider";
 
 const Sign_Up = () => {
   const { signup } = useContext(AuthContext);
-
+  const location = useLocation();
+  const navigate = useNavigate();
   const signup_submit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -21,6 +22,7 @@ const Sign_Up = () => {
         // Signed in
         const user = rec.user;
         console.log(user);
+        navigate(location?.state || "/");
         //...
       })
       .catch((error) => {

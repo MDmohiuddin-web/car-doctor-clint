@@ -14,9 +14,10 @@ const Ard = ({ booking, setBookings, bookings }) => {
         .then((data) => {
           console.log(data);
           if (data.deletedCount > 0) {
-            alert("Deleted successfully");
+            // alert("Deleted successfully");
             const remaining = bookings.filter((booking) => booking._id !== id);
             setBookings(remaining);
+            // window.location.reload();
           }
         });
     }

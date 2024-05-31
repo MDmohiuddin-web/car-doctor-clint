@@ -5,7 +5,7 @@ import Navbar from "../Navbar/Navbar";
 const Root = () => {
   return (
     <div className="capitalize ">
-      <div className="w-full md:w-4/5  m-auto">
+      <div className="w-full md:w-4/5 font-bold m-auto">
         <Navbar></Navbar>
       </div>
       <div className="w-4/5 m-auto ">

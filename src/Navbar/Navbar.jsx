@@ -25,7 +25,7 @@ const Navbar = () => {
         <NavLink to="Services">Services</NavLink>
       </li>
       <li className="hover:text-my_color-400">
-        <NavLink to="/Blog">Blog</NavLink>
+        <NavLink to="/ServiceDetails">Blog</NavLink>
       </li>
       <li className="hover:text-my_color-400">
         <NavLink to="/Contact">Contact</NavLink>

@@ -1,14 +1,18 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import facebook from "../assets/Facebook.svg";
 import linkding from "../assets/Linkding.svg";
 import Google from "../assets/Google.svg";
 import im from "../assets/images/login/login.svg";
-import { useContext } from "react";
 import { AuthContext } from "../Auth/Authprovider";
+import axios from "axios";
 
 const Login = () => {
   const { sign } = useContext(AuthContext);
-  
+  const location = useLocation();
+  console.log(location);
+  const navigate = useNavigate(); // Move this outside of login_submit
+
   const login_submit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -19,11 +23,22 @@ const Login = () => {
     sign(email, password)
       .then((rec) => {
         // Signed in
-        const user = rec.user;
-        console.log(user)
-        if (user) {
+        const loguser = rec.user;
+         console.log(loguser);
+         const user={email};
+         axios.post("http://localhost:3000/jwt",user)
+         .then((res)=>{
+          console.log(res.data);
+         })
+
+
+
+
+        if (loguser) {
           form.reset();
-          alert("login success");
+          // alert("login success");
+          // navigate(location?.state || "/"); its not working
+          navigate( "/"); // Use navigate here
           window.location.reload();
         }
         //...
@@ -33,6 +48,10 @@ const Login = () => {
         //..
       });
   };
+
+  // Rest of your component remains unchanged
+  // ...
+
   return (
     <div className=" flex-wrap flex   my-10   items-center ">
       <div className="bg-white p-6 rounded-lg  w-full md:w-[30%] m-auto my-5 md:h-[300px] ">
