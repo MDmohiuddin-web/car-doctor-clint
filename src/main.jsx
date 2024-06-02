@@ -21,6 +21,8 @@ import Booking from "./Navbar/Booking";
 import PrivateRout from "./Private/PrivateRout";
 import ServiceDetails from "./Navbar/ServiceDetails";
 
+
+
 const router = createBrowserRouter([
   {
     path: "/",

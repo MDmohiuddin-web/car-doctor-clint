@@ -24,24 +24,16 @@ const Login = () => {
       .then((rec) => {
         // Signed in
         const loguser = rec.user;
-         console.log(loguser);
-         const user={email};
-         axios.post("http://localhost:3000/jwt",user)
-         .then((res)=>{
-          console.log(res.data);
-         })
-
-
-
-
-        if (loguser) {
-          form.reset();
-          // alert("login success");
-          // navigate(location?.state || "/"); its not working
-          navigate( "/"); // Use navigate here
-          window.location.reload();
-        }
-        //...
+        console.log(loguser);
+        const user = { email };
+        axios
+          .post("http://localhost:3000/jwt", user, { withCredentials: true })
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.success) {
+              navigate(location?.state || "/");
+            }
+          });
       })
       .catch((error) => {
         console.log(error);
