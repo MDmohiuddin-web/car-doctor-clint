@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
-  getAuth,
+  getAuth,onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
@@ -26,6 +26,8 @@ const Authprovider = ({ children }) => {
   };
   const sinout = () => {
     setLoader(true);
+    console.log("sign out");
+
     return signOut(auth);
   };
   const updateUserProfile = (name, image) => {
@@ -38,7 +40,7 @@ const Authprovider = ({ children }) => {
   };
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+    const unsubscribe =auth. onAuthStateChanged((authUser) => {
       if (authUser) {
         setUser(authUser);
         setLoader(false);
@@ -49,6 +51,22 @@ const Authprovider = ({ children }) => {
     });
     return () => unsubscribe();
   }, []);
+
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       setUser(user);
+  //       setLoader(false);
+  //     }
+  //     //  else {
+  //     //   // User is signed out
+  //     //   // ...
+  //     // }
+  //   });
+  //   return () => {
+  //     unsubscribe();
+  //   };
+  // }, []);
 
   const Authinfo = {
     user,

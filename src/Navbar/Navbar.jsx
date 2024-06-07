@@ -9,7 +9,8 @@ const Navbar = () => {
   const { user, sinout } = useContext(AuthContext);
   const logout = () => {
     sinout()
-      .then(() => {})
+    
+      .then(() => {window.location.reload()})
       .catch((error) => console.error(error));
   };
 

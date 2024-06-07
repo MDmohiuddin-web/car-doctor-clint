@@ -11,8 +11,11 @@ const Profile = () => {
     const UpdatephotoURL = form.UpdatephotoURL.value;
     const Updatename = form.Updatename.value;
     console.log(Updatename, UpdatephotoURL);
-    updateUserProfile()
-      .then(() => {})
+    updateUserProfile(Updatename, UpdatephotoURL)
+      .then(() => {
+        window.location.reload();
+        
+      })
       .catch((error) => console.error(error));
   };
 

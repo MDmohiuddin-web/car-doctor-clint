@@ -27,13 +27,13 @@ const Login = () => {
         console.log(loguser);
         const user = { email };
         axios
-          .post("http://localhost:3000/jwt", user, { withCredentials: true })
-          .then((res) => {
-            console.log(res.data);
-            if (res.data.success) {
-              navigate(location?.state || "/");
-            }
-          });
+        .post("http://localhost:3000/jwt", user, { withCredentials: true })
+        .then((res) => {
+          console.log(res.data);
+          if (res.data.success) {
+            navigate(location?.state || "/");
+          }
+        });
       })
       .catch((error) => {
         console.log(error);

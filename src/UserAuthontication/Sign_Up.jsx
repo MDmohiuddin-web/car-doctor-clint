@@ -7,22 +7,25 @@ import { useContext } from "react";
 import { AuthContext } from "../Auth/Authprovider";
 
 const Sign_Up = () => {
-  const { signup } = useContext(AuthContext);
+  const { signup, updateUserProfile } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const signup_submit = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
+    const names = form.names.value;
     const email = form.email.value;
+    const Photo = form.Photo.value;
     const password = form.password.value;
-    console.log(name, email, password);
+    console.log(names, email, Photo, password);
     signup(email, password)
       .then((rec) => {
+        updateUserProfile(names, Photo);
         // Signed in
         const user = rec.user;
         console.log(user);
         navigate(location?.state || "/");
+        window.location.reload();
         //...
       })
       .catch((error) => {
@@ -43,17 +46,17 @@ const Sign_Up = () => {
         <form onSubmit={signup_submit}>
           <div className="mb-4">
             <label
-              htmlFor="name"
+              htmlFor="names"
               className="block text-sm font-medium text-gray-700"
             >
-              name
+              names
             </label>
             <input
-              type="name"
-              id="name"
-              name="name"
+              type="names"
+              id="names"
+              name="names"
               className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200"
-              placeholder="Your name"
+              placeholder="Your names"
               required
             />
           </div>
@@ -70,6 +73,22 @@ const Sign_Up = () => {
               name="email"
               className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200"
               placeholder="Your email"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Photo url
+            </label>
+            <input
+              type="url"
+              id="Photo"
+              name="Photo"
+              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200"
+              placeholder="Your Photo"
               required
             />
           </div>
