@@ -6,9 +6,10 @@ import Google from "../assets/Google.svg";
 import im from "../assets/images/login/login.svg";
 import { AuthContext } from "../Auth/Authprovider";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Login = () => {
-  const { sign } = useContext(AuthContext);
+  const { sign, googlesign } = useContext(AuthContext);
   const location = useLocation();
   console.log(location);
   const navigate = useNavigate(); // Move this outside of login_submit
@@ -27,18 +28,39 @@ const Login = () => {
         console.log(loguser);
         const user = { email };
         axios
-        .post("http://localhost:3000/jwt", user, { withCredentials: true })
-        .then((res) => {
-          console.log(res.data);
-          if (res.data.success) {
-            navigate(location?.state || "/");
-          }
-        });
+          .post("http://localhost:3000/jwt", user, { withCredentials: true })
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.success) {
+              navigate("/" || location?.state);
+              // navigate("/");
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+
+            //..
+          });
+        toast.success("signIn success full");
+        navigate(location?.state || "/");
       })
       .catch((error) => {
         console.log(error);
+        toast.error("signIn failed");
         //..
       });
+  };
+  const handleGoogleSignIn = () => {
+    googlesign()
+    .then((res) => {
+      console.log(res);
+      toast.success("signInWithGoogle success full");
+      
+    })
+   .catch((error) => {
+      console.log(error);
+      toast.error("signInWithGoogle failed");
+    });
   };
 
   // Rest of your component remains unchanged
@@ -98,7 +120,7 @@ const Login = () => {
           <p className="mt-4 text-gray-600 text-center">Or Log in with</p>
 
           <div className="flex gap-5 my-4 justify-center ">
-            <img src={Google} alt="" />
+            <img src={Google} alt="" onClick={handleGoogleSignIn} />
             <img src={facebook} alt="" />
             <img src={linkding} alt="" />
           </div>

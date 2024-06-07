@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../Auth/Authprovider";
+import { toast } from "react-toastify";
 
 const Profile = () => {
   const { user, updateUserProfile } = useContext(AuthContext);
@@ -13,8 +14,8 @@ const Profile = () => {
     console.log(Updatename, UpdatephotoURL);
     updateUserProfile(Updatename, UpdatephotoURL)
       .then(() => {
-        window.location.reload();
-        
+        toast.success("updateUserProfile success full");
+         window.location.reload();
       })
       .catch((error) => console.error(error));
   };

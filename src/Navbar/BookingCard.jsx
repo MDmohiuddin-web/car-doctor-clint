@@ -1,4 +1,4 @@
-
+import { toast } from "react-toastify";
 
 const Ard = ({ booking, setBookings, bookings }) => {
   const { Name, servicetitele, dates, price, img, _id, status } = booking;
@@ -10,14 +10,21 @@ const Ard = ({ booking, setBookings, bookings }) => {
         method: "DELETE",
         headers: { "content-type": "application/json" },
       })
-        .then((res) => res.json())
+        .then((res) => {
+          res.json();
+         
+        })
         .then((data) => {
           console.log(data);
           if (data.deletedCount > 0) {
             // alert("Deleted successfully");
             const remaining = bookings.filter((booking) => booking._id !== id);
             setBookings(remaining);
+            toast.success("Deleted successfully");
             // window.location.reload();
+          } else {
+            // alert("Failed to delete");
+            toast.error("Failed to delete");
           }
         });
     }
@@ -70,7 +77,7 @@ const Ard = ({ booking, setBookings, bookings }) => {
         <td>{dates}</td>
         <th className="flex justify-center gap-2">
           {status === "confirm" ? (
-            <span className="text-green-500 btn-outline btn">Confirm</span>
+            <span className="text-green-500 btn-outline btn">Confirmed</span>
           ) : (
             <button
               onClick={() => handleConfirm(_id)}

@@ -5,9 +5,10 @@ import Google from "../assets/Google.svg";
 import im from "../assets/images/login/login.svg";
 import { useContext } from "react";
 import { AuthContext } from "../Auth/Authprovider";
+import { toast } from "react-toastify";
 
 const Sign_Up = () => {
-  const { signup, updateUserProfile } = useContext(AuthContext);
+  const { signup, updateUserProfile, googlesign } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const signup_submit = (e) => {
@@ -25,12 +26,26 @@ const Sign_Up = () => {
         const user = rec.user;
         console.log(user);
         navigate(location?.state || "/");
+        toast.success("signup success full");
         window.location.reload();
         //...
       })
       .catch((error) => {
         console.log(error);
+        toast.error("signup failed");
         //..
+      });
+  };
+  const glob = () => {
+    googlesign()
+    .then((res) => {
+        console.log(res);
+        toast.success("signInWithGoogle success full");
+        
+      })
+     .catch((error) => {
+        console.log(error);
+        toast.error("signInWithGoogle failed");
       });
   };
 
@@ -120,7 +135,8 @@ const Sign_Up = () => {
           <p className="mt-4 text-gray-600 text-center">Or Sign In with</p>
 
           <div className="flex gap-5 my-4 justify-center ">
-            <img src={Google} alt="" />
+            <img src={Google} alt="" onClick={glob} />
+
             <img src={facebook} alt="" />
             <img src={linkding} alt="" />
           </div>

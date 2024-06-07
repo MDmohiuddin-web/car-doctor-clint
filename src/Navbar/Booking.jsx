@@ -12,6 +12,7 @@ const Booking = () => {
     axios.get(url, { withCredentials: true })
     .then((res) => {
       setBookings(res.data);
+      
     });
     //oater native option
 

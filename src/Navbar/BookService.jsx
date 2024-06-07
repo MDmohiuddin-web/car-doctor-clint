@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Auth/Authprovider";
+import { toast } from "react-toastify";
 
 const BookService = () => {
   const service = useLoaderData();
@@ -173,7 +174,7 @@ const BookService = () => {
           </div>
           <button
             onClick={() => {
-              alert("Your Booking is Done");
+              toast.success("Bookings success full");
               
             }}
             type="submit"
