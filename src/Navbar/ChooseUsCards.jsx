@@ -8,7 +8,7 @@ import Delivery from "../assets/icons/deliveryt.svg";
 
 const ChooseUsCards = () => {
   return (
-    <div className="flex flex-wrap gap-5 w-full   p-2 justify-center  ">
+    <div className="flex flex-wrap gap-5 w-full   p-2 justify-center mb-10">
 
       <div className="hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 h-[130px] border gap-5 text-center items-center justify-center flex flex-col rounded-md shadow-md w-full md:w-[140px]">
         <img src={group} alt="" />

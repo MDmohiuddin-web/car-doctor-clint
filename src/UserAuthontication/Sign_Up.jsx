@@ -41,6 +41,7 @@ const Sign_Up = () => {
     .then((res) => {
         console.log(res);
         toast.success("signInWithGoogle success full");
+        navigate(location?.state || "/");
         
       })
      .catch((error) => {
@@ -103,8 +104,8 @@ const Sign_Up = () => {
               id="Photo"
               name="Photo"
               className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200"
-              placeholder="Your Photo"
-              required
+              placeholder="Your Photo is optional"
+              
             />
           </div>
 

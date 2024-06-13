@@ -9,7 +9,7 @@ const Booking = () => {
   const [bookings, setBookings] = useState([]);
   const url = `http://localhost:3000/bookings?email=${user?.email}`;
   useEffect(() => {
-    axios.get(url, { withCredentials: true })
+    axios.get(url)
     .then((res) => {
       setBookings(res.data);
       

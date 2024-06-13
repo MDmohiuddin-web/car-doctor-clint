@@ -9,8 +9,9 @@ const Navbar = () => {
   const { user, sinout } = useContext(AuthContext);
   const logout = () => {
     sinout()
-    
-      .then(() => {window.location.reload()})
+      .then(() => {
+        window.location.reload();
+      })
       .catch((error) => console.error(error));
   };
 
@@ -39,7 +40,6 @@ const Navbar = () => {
       {/* i dent need it  */}
       {user?.email ? (
         <>
-         
           <li className="hover:text-my_color-400">
             <NavLink to="/Booking">Booking</NavLink>
           </li>
@@ -92,8 +92,11 @@ const Navbar = () => {
         </div>
 
         <div className={`navbar-end  gap-10  md:gap-10`}>
-          <div className={`flex justify-between gap-1 md:gap-5 pr-4`}>
-            <img src={frame} alt="" className="cursor-pointer" />
+          <div className="flex justify-between gap-1 md:gap-5 pr-4 items-center">
+            <Link to="/Booking">
+              <img src={frame} alt="" className="cursor-pointer" />
+            </Link>
+
             <img src={frame1} alt="" className="cursor-pointer" />
             <button className="text-red-500 btn-outline btn  ">
               Appointment

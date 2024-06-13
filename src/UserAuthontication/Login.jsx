@@ -54,8 +54,9 @@ const Login = () => {
     googlesign()
     .then((res) => {
       console.log(res);
-      toast.success("signInWithGoogle success full");
       
+      toast.success("signInWith Google success full");
+      // navigate( location?.state || "/");
     })
    .catch((error) => {
       console.log(error);

@@ -10,23 +10,27 @@ const Ard = ({ booking, setBookings, bookings }) => {
         method: "DELETE",
         headers: { "content-type": "application/json" },
       })
-        .then((res) => {
-          res.json();
-         
-        })
+        .then((res) => res.json()) // Parse the response as JSON
         .then((data) => {
           console.log(data);
           if (data.deletedCount > 0) {
-            // alert("Deleted successfully");
+            // Successfully deleted
             const remaining = bookings.filter((booking) => booking._id !== id);
             setBookings(remaining);
             toast.success("Deleted successfully");
-            // window.location.reload();
           } else {
-            // alert("Failed to delete");
+            // Failed to delete
             toast.error("Failed to delete");
           }
+        })
+        .catch((error) => {
+          console.log(error);
+          // Handle any fetch or parsing errors
+          toast.error("An error occurred while deleting");
         });
+    } else {
+      // Failed to delete
+      toast.error("Failed to delete");
     }
   };
 

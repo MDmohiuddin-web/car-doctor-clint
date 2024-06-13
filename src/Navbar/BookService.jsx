@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Auth/Authprovider";
 import { toast } from "react-toastify";
 
@@ -8,6 +8,7 @@ const BookService = () => {
   const { title, price, _id, img } = service;
 
   const { user } = useContext(AuthContext);
+ 
 
   //, img,_id
 
@@ -45,8 +46,23 @@ const BookService = () => {
       headers: { "content-type": "application/json" },
       body: JSON.stringify(Order),
     })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data); // Log the data (you can customize this)
+    
+      if (data.acknowledged) {
+        toast.success("Booking successful") // Show a success toast
+        window.location.reload(); // Reload the page
+      
+        // Alternatively, navigate to a default route if location.state is undefined
+        // navigate("/");
+      } else {
+        toast.error("Booking failed"); // Show an error toast
+      }
+      
+    });
+    
+    
   };
   return (
     <div className="w-full mx-auto px-5  bg-white rounded-lg ">
@@ -55,7 +71,7 @@ const BookService = () => {
           Book Service
         </h2>
         <div className="bg-red-500 absolute bottom-0 px-10 p-3 left-[40%]  text-white rounded-t-xl ">
-          <Link to="/">Home</Link> / <Link to='/Booking'>Booked Serviced</Link>
+          <Link to="/">Home</Link> / <Link to="/Booking">Booked Serviced</Link>
         </div>
       </div>
       {/*  */}
@@ -173,10 +189,9 @@ const BookService = () => {
             ></textarea>
           </div>
           <button
-            onClick={() => {
-              toast.success("Bookings success full");
-              
-            }}
+            // onClick={() => {
+            //   toast.success("Bookings success full");
+            // }}
             type="submit"
             className="bg-red-500 text-white py-2 px-4 rounded-md w-full hover:bg-red-600"
           >

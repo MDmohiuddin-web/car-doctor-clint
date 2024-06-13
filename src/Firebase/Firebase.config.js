@@ -29,7 +29,7 @@ const firebaseConfig = {
 // console.log("Storage Bucket:", firebaseConfig.storageBucket);
 // console.log("Messaging Sender ID:", firebaseConfig.messagingSenderId);
 // console.log("App ID:", firebaseConfig.appId);
-console.log("Importing firebaseConfig  hide api keys");
+// console.log("Importing firebaseConfig  hide api keys");
 
 
 // Initialize Firebase
