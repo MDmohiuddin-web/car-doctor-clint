@@ -10,7 +10,7 @@ const Services = () => {
   useEffect(() => {
     // Fetch data from the local JSON file
     // fetch("services.json")
-    fetch("http://localhost:3000/services")
+    fetch("https://car-server-eta-lyart.vercel.app/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data); // Update state with the fetched data

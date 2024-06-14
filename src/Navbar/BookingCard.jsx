@@ -6,7 +6,7 @@ const Ard = ({ booking, setBookings, bookings }) => {
   const deleted = (id) => {
     const priced = window.confirm("Delete this booking?");
     if (priced) {
-      fetch(`http://localhost:3000/bookings/${id}`, {
+      fetch(`https://car-server-eta-lyart.vercel.app/bookings/${id}`, {
         method: "DELETE",
         headers: { "content-type": "application/json" },
       })
@@ -35,7 +35,7 @@ const Ard = ({ booking, setBookings, bookings }) => {
   };
 
   const handleConfirm = (id) => {
-    fetch(`http://localhost:3000/bookings/${id}`, {
+    fetch(`https://car-server-eta-lyart.vercel.app/bookings/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -56,9 +56,10 @@ const Ard = ({ booking, setBookings, bookings }) => {
   };
 
   return (
-    <tbody>
-      <tr className="hover:scale-105 duration-300 hover:shadow-lg translate-x-5 ease-out">
-        <td>
+    <tbody className="">
+      <tr className="hover:scale-105 duration-300 hover:shadow-lg translate-x-5 ease-out flex flex-wrap">
+        <td className="flex  md:w-1/2 justify-around p-2  flex-wrap px-4 ">
+        <td >
           <div className="flex items-center gap-3">
             <div className="avatar">
               <div className="mask rounded-lg w-12 h-12">
@@ -77,9 +78,10 @@ const Ard = ({ booking, setBookings, bookings }) => {
             </div>
           </div>
         </td>
-        <td>{price} $</td>
-        <td>{dates}</td>
-        <th className="flex justify-center gap-2">
+        <td >{price} $</td>
+        <td >{dates}</td>
+        </td>
+        <th className="flex justify-end gap-2 md:w-1/2 md:pr-10 items-center w-4/5">
           {status === "confirm" ? (
             <span className="text-green-500 btn-outline btn">Confirmed</span>
           ) : (

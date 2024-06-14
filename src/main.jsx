@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        // loader: () => fetch("services.json"),
+       
       },
       {
         path: "/Login",
@@ -83,19 +83,19 @@ const router = createBrowserRouter([
         path: "/BookService/:id",
         element: <PrivateRout><BookService></BookService></PrivateRout>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/services/${params.id} `),
+          fetch(`https://car-server-eta-lyart.vercel.app/services/${params.id} `),
       },
       {
         path: "/CheckOutService/:id",
         element: <CheckOutService></CheckOutService>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/services/${params.id} `),
+          fetch(`https://car-server-eta-lyart.vercel.app/services/${params.id} `),
       },
       {
         path: "/AddNewService/:id",
         element: <AddNewService></AddNewService>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/services/${params.id} `),
+          fetch(`https://car-server-eta-lyart.vercel.app/services/${params.id} `),
       },
     ],
   },

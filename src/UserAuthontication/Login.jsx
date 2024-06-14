@@ -28,7 +28,7 @@ const Login = () => {
         console.log(loguser);
         const user = { email };
         axios
-          .post("http://localhost:3000/jwt", user, { withCredentials: true })
+          .post("https://car-server-eta-lyart.vercel.app/jwt", user, { withCredentials: true })
           .then((res) => {
             console.log(res.data);
             if (res.data.success) {

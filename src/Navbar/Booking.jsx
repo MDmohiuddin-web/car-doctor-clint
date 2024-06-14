@@ -7,7 +7,7 @@ import axios from "axios";
 const Booking = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
-  const url = `http://localhost:3000/bookings?email=${user?.email}`;
+  const url = `https://car-server-eta-lyart.vercel.app/bookings?email=${user?.email}`;
   useEffect(() => {
     axios.get(url)
     .then((res) => {
@@ -34,7 +34,7 @@ const Booking = () => {
         </p>
       </div>
 
-      <table className="table overflow-hidden">
+      <table className="table overflow-hidden ">
         {/* <h1 className="text-3xl text-center">Booking {bookings.length}</h1> */}
         {bookings.map((booking) => (
           <BookingCard

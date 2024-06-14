@@ -41,7 +41,7 @@ const BookService = () => {
       // Phone,
     );
 
-    fetch("http://localhost:3000/bookings", {
+    fetch("https://car-server-eta-lyart.vercel.app/bookings", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(Order),

@@ -15,14 +15,17 @@ import MoreProducts from "../Navbar/MoreProducts";
 import Team from "../Navbar/Team";
 import ChooseUsCards from "../Navbar/ChooseUsCards";
 
+
 const Home = () => {
-  // const service = useLoaderData();
+
   return (
     <div>
       {/* <h3>Welcome to the home page</h3> */}
       <Banner></Banner>
       <About></About>
       <Text></Text>
+      
+
       <Services></Services>
       <MoreServices></MoreServices>
       <Text2></Text2>
